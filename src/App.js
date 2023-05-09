@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { CartProvider } from './CartContext';
+import Product from './Product';
+import Cart from './Cart';
+
+const products = [
+  { name: 'Coffee 1', description: 'Delicious coffee' },
+  { name: 'Coffee 2', description: 'Smooth coffee' },
+  { name: 'Coffee 3', description: 'Bold coffee' },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <div className="App">
+        <h1>Coffee Shop</h1>
+        {products.map((product, index) => (
+          <Product key={index} product={product} />
+        ))}
+        <Cart />
+      </div>
+    </CartProvider>
   );
 }
 
