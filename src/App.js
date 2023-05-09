@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { CartProvider } from './CartContext';
-import Home from './Home';
-import Product from './Product';
-import ProductDetails from './ProductDetails';
-import Cart from './Cart';
-import Checkout from './Checkout';
+import { CartProvider } from './components/contexts/CartContext';
+import Home from './components/Home';
+import Product from './components/Product/Product';
+import ProductDetails from './components/Product/ProductDetails';
+import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout';
 
 const products = [
   { id: 1, name: 'Coffee 1', description: 'Delicious coffee' },
