@@ -13,8 +13,13 @@ export const CartProvider = ({ children }) => {
     setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
   };
 
+  const checkout = () => {
+    console.log('Purchased items:', cartItems);
+    setCartItems([]);
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, checkout }}>
       {children}
     </CartContext.Provider>
   );
